@@ -33,6 +33,9 @@ const Navigation = () => {
         component={PokedexScreen}
         options={{
           headerTitleAlign: "center",
+          /*           headerTransparent: true,
+          headerTitle: "", */
+          headerShown: false,
           tabBarLabel: "",
           tabBarIcon: () => renderPokeBall(),
         }}
@@ -43,7 +46,7 @@ const Navigation = () => {
         options={{
           headerTitle: "Mi cuenta",
           headerTitleAlign: "center",
-          tabBarLabel: (props) => {
+          /*           tabBarLabel: (props) => {
             const { focused, color, position } = props;
             if (focused) {
               return <Text></Text>;
@@ -53,7 +56,7 @@ const Navigation = () => {
               );
             }
           },
-          /*  focused ? <Text></Text> : <Text>MiCuenta</Text>, */
+
           tabBarIcon: (props) => {
             const { color, size } = props;
             if (props.focused) {
@@ -61,14 +64,14 @@ const Navigation = () => {
             } else {
               return <Icon name="user" color={color} size={size} />;
             }
-          },
+          }, */
         }}
       />
-      {/*       <Tab.Screen
+      <Tab.Screen
         name="Scanner"
         component={ScannerQr}
         options={{ headerTransparent: true, tabBarShowLabel: false }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };

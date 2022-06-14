@@ -45,14 +45,13 @@ const ScannerQr = () => {
   }
 
   return (
-    /*     <View style={styles.container}>
-      <View style={styles.barcodebox}> */
-    <BarCodeScanner
-      onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-      style={{ width: "100%", height: "100%", position: "absolute" }}
-    />
-
-    /*       </View>
+    <View style={styles.container}>
+      <View style={styles.barcodebox}>
+        <BarCodeScanner
+          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+          style={{ width: "50%", height: "100%", position: "absolute" }}
+        />
+      </View>
       <Text>{text}</Text>
       {scanned && (
         <Button
@@ -61,7 +60,7 @@ const ScannerQr = () => {
           color="tomato"
         />
       )}
-    </View> */
+    </View>
   );
 };
 
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
   barcodebox: {
     alignItems: "center",
     /*     justifyContent: "center",
-     */ height: 600,
+     */ height: 300,
     width: 300,
     overflow: "hidden",
     borderRadius: 30,

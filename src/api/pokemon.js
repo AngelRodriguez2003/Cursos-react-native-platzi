@@ -3,10 +3,10 @@ import config from "../../config";
 
 const { API_HOST } = config;
 
-export const getPokemonsApi = async () => {
+export const getPokemonsApi = async (endpointUrl) => {
   try {
-    const url = `${API_HOST}/pokemon?limit=20$offset=0`;
-    const response = await axios.get(url);
+    const url = `${API_HOST}/pokemon?offset=1080&limit=20`;
+    const response = await axios.get(endpointUrl || url);
     return response;
   } catch (error) {
     throw error;
