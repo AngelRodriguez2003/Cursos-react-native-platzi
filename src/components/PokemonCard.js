@@ -43,7 +43,7 @@ const PokemonCard = ({ pokemon }) => {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
+    flex: 2,
     height: 130,
   },
   spacing: {
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 15,
     paddingTop: 10,
+    fontWeight: "bold",
   },
 });
 export default PokemonCard;
