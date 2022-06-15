@@ -5,7 +5,7 @@ const { API_HOST } = config;
 
 export const getPokemonsApi = async (endpointUrl) => {
   try {
-    const url = `${API_HOST}/pokemon?offset=1080&limit=20`;
+    const url = `${API_HOST}/pokemon?offset=0&limit=20`;
     const response = await axios.get(endpointUrl || url);
     return response;
   } catch (error) {

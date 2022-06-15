@@ -1,18 +1,16 @@
-import { Image, Text } from "react-native";
+import { Image } from "react-native";
 import React from "react";
 Icon;
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AccoutScreen from "../screens/Accout";
 import Icon from "@expo/vector-icons/FontAwesome5";
-
+import AccoutScreen from "../screens/Accout";
 import FavoriteScreen from "../screens/Favorite";
-import PokedexScreen from "../screens/Pokedex";
-import { getPokemonsApi } from "../api/pokemon";
 import ScannerQr from "../screens/ScannerQr";
+import PokedexNavigation from "./PokedexNavigation";
 
 const Navigation = () => {
   const Tab = createBottomTabNavigator();
-  getPokemonsApi();
+
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -29,8 +27,8 @@ const Navigation = () => {
       />
 
       <Tab.Screen
-        name="Pokedex"
-        component={PokedexScreen}
+        name="PokedexNavigation"
+        component={PokedexNavigation}
         options={{
           headerTitleAlign: "center",
           /*           headerTransparent: true,
@@ -70,7 +68,7 @@ const Navigation = () => {
       <Tab.Screen
         name="Scanner"
         component={ScannerQr}
-        options={{ headerTransparent: true, tabBarShowLabel: false }}
+        options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );

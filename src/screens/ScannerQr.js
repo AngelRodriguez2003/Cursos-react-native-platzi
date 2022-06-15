@@ -1,6 +1,7 @@
 import { View, Text, Button, StyleSheet } from "react-native";
 import React, { useEffect, useState } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ScannerQr = () => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -26,26 +27,26 @@ const ScannerQr = () => {
 
   if (hasPermission == null) {
     return (
-      <View>
+      <SafeAreaView style={styles.container}>
         <Text>Solicitando permiso para camara</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   if (hasPermission == false) {
     return (
-      <View>
+      <SafeAreaView style={styles.container}>
         <Text style={{ margin: 10 }}>Sin acceso a la camara</Text>
         <Button
           title={"Allow Camera"}
           onPress={() => askForCameraPermission()}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.barcodebox}>
         <BarCodeScanner
           onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
@@ -60,7 +61,7 @@ const ScannerQr = () => {
           color="tomato"
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

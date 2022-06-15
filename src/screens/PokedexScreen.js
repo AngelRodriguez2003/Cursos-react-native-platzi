@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { getPokemonDetailsByUrlApi, getPokemonsApi } from "../api/pokemon";
 import PokemonList from "../components/PokemonList";
 
-const Pokedex = () => {
+const PokedexScreen = () => {
   const [pokemons, setPokemons] = useState([]);
   const [nextUrl, setNextUrl] = useState(null);
   useEffect(() => {
@@ -47,4 +47,4 @@ const Pokedex = () => {
 };
 
 const styles = StyleSheet.create({});
-export default Pokedex;
+export default PokedexScreen;
