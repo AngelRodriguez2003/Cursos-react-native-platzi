@@ -3,6 +3,10 @@ import React from "react";
 import { capitalize } from "lodash";
 
 const Stats = ({ stats }) => {
+  const barStyles = (num) => {
+    const color = num > 49 ? "green" : "red";
+    return { ...styles.bar, backgroundColor: color, width: `${num}%` };
+  };
   return (
     <View style={styles.content}>
       <Text style={styles.title}>Base Styles</Text>
@@ -12,7 +16,12 @@ const Stats = ({ stats }) => {
             <View style={styles.blockTitle}>
               <Text style={styles.statName}>{capitalize(item.stat.name)}</Text>
             </View>
-            <Text>Barrita</Text>
+            <View style={styles.blockInfo}>
+              <Text style={styles.number}>{item.base_stat}</Text>
+              <View style={styles.bgBar}>
+                <View style={barStyles(item.base_stat)} />
+              </View>
+            </View>
           </View>
         );
       })}
@@ -42,6 +51,27 @@ const styles = StyleSheet.create({
   },
   statName: {
     fontSize: 12,
-    color: "6B6B6B",
+    color: "#6B6B6B",
+  },
+  blockInfo: {
+    width: "70%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  number: {
+    width: "12%",
+    fontSize: 12,
+  },
+  bgBar: {
+    backgroundColor: "#d6d6d6",
+    width: "80%",
+    height: 5,
+    borderRadius: 20,
+    overflow: "hidden",
+  },
+  bar: {
+    /* backgroundColor: "red",
+    width: "50%", */
+    height: "100%",
   },
 });

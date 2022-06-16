@@ -5,6 +5,7 @@ import { getPokemonDetailsApi } from "../api/pokemon";
 import Header from "../components/pokemon/Header";
 import Type from "../components/pokemon/Type";
 import Stats from "../components/pokemon/Stats";
+import Icon from "@expo/vector-icons/FontAwesome5";
 
 const Pokemon = (props) => {
   const {
@@ -12,6 +13,22 @@ const Pokemon = (props) => {
     navigation,
   } = props;
   const [pokemon, setPokemon] = useState(null);
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => null,
+      headerLeft: () => {
+        return (
+          <Icon
+            name="arrow-left"
+            color="#fff"
+            size={20}
+            style={{ marginLeft: 20 }}
+            onPress={navigation.goBack}
+          />
+        );
+      },
+    });
+  }, [navigation, params]);
 
   useEffect(() => {
     (async () => {
