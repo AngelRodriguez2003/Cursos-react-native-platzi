@@ -54,15 +54,18 @@ const Navigation = () => {
               );
             }
           },
-
+*/
           tabBarIcon: (props) => {
             const { color, size } = props;
-            if (props.focused) {
-              return renderPokeBall();
-            } else {
-              return <Icon name="user" color={color} size={size} />;
-            }
-          }, */
+            return <Icon name="user" color={color} size={size} />;
+
+            //logica para cambia icono a pokebola cuando esta activo
+            // if (props.focused) {
+            //   return renderPokeBall();
+            // } else {
+            //   return <Icon name="user" color={color} size={size} />;
+            // }
+          },
         }}
       />
       <Tab.Screen

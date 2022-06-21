@@ -3,9 +3,10 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LoginForm from "../components/auth/LoginForm";
 import UserData from "../components/auth/UserData";
+import useAuth from "../hooks/useAuth";
 
 const Accout = () => {
-  const auth = null;
+  const { auth } = useAuth();
   return <View>{auth ? <UserData /> : <LoginForm />}</View>;
 };
 
